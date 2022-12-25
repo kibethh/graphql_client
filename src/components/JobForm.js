@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useHistory } from "react-router";
 import { createJob } from "../graphql/queries";
 
 function JobForm() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -13,8 +12,7 @@ function JobForm() {
     console.log("should post a new job:", { title, description });
     const job = await createJob({ title, description });
     console.log("Job created:", job);
-    // navigate(`/jobs/${job.id}`);
-    useHistory(`/jobs/${job.id}`);
+    navigate(`/jobs/${job.id}`);
   };
 
   return (
