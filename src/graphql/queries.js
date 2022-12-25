@@ -119,9 +119,3 @@ export async function getJob(id) {
   } = await client.query({ query, variables });
   return job;
 }
-// export async function getJobs() {
-//   const {
-//     data: { jobs },
-//   } = await client.query({ query: JOBS_QUERY, fetchPolicy: "network-only" });
-//   return jobs;
-// }
